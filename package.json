@@ -63,7 +63,7 @@
     "ckeditor5": "38.0.1"
   },
   "peerDependencies": {
-    "@strapi/strapi": "^4.4.0"
+    "@strapi/strapi": "4.10.8"
   },
   "repository": {
     "type": "git",
