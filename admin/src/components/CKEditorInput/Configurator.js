@@ -28,6 +28,15 @@ import ckeditor5SourceEditingDll from "@ckeditor/ckeditor5-source-editing/build/
 import ckeditor5HtmlSupportDll from "@ckeditor/ckeditor5-html-support/build/html-support.js";
 import {StrapiMediaLib} from "./plugins/StrapiMediaLib";
 
+
+/**
+ * This is the base config for the CKEditor5 Custom Component.
+ * It is used to generate the config for the presets.
+ *
+ * HTML support is enabled by default.
+ * The configuration of the HTML support is done in the presets.
+ * https://ckeditor.com/docs/ckeditor5/latest/features/html/general-html-support.html
+ */
 const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
   light: {
     plugins: [
@@ -168,7 +177,55 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     htmlSupport: {
       allow: [
         {
+          name: 'h1',
+          attributes: {
+            sizes: true,
+            loading: true,
+            class: true
+          }
+        },
+        {
+          name: 'h2',
+          attributes: {
+            sizes: true,
+            loading: true,
+            class: true
+          }
+        },
+        {
           name: 'h3',
+          attributes: {
+            sizes: true,
+            loading: true,
+            class: true
+          }
+        },
+        {
+          name: 'h4',
+          attributes: {
+            sizes: true,
+            loading: true,
+            class: true
+          }
+        },
+        {
+          name: 'h5',
+          attributes: {
+            sizes: true,
+            loading: true,
+            class: true
+          }
+        },
+        {
+          name: 'h6',
+          attributes: {
+            sizes: true,
+            loading: true,
+            class: true
+          }
+        },
+        {
+          name: 'div',
           attributes: {
             sizes: true,
             loading: true,
@@ -191,7 +248,14 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
             class: true
           }
         },
-
+        {
+          name: 'img',
+          attributes: {
+            sizes: true,
+            loading: true,
+            class: true
+          }
+        },
       ]
     }
   },
