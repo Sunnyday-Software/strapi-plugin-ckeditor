@@ -29,6 +29,92 @@ import ckeditor5HtmlSupportDll from "@ckeditor/ckeditor5-html-support/build/html
 import {StrapiMediaLib} from "./plugins/StrapiMediaLib";
 
 
+const basicHtmlTagsSupportConfig = {
+  allow: [
+    {
+      name: 'h1',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'h2',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'h3',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'h4',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'h5',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'h6',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'div',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'p',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'span',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'img',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+  ]
+}
+
+
 /**
  * This is the base config for the CKEditor5 Custom Component.
  * It is used to generate the config for the presets.
@@ -174,90 +260,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         'toggleTableCaption'
       ]
     },
-    htmlSupport: {
-      allow: [
-        {
-          name: 'h1',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'h2',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'h3',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'h4',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'h5',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'h6',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'div',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'p',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'span',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'img',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-      ]
-    }
+    htmlSupport: basicHtmlTagsSupportConfig
   },
 
   rich: {
@@ -430,35 +433,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       columns: 5,
       documentColors: 10,
     },
-    htmlSupport: {
-      allow: [
-        {
-          name: 'h3',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'p',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-        {
-          name: 'span',
-          attributes: {
-            sizes: true,
-            loading: true,
-            class: true
-          }
-        },
-
-      ]
-    }
+    htmlSupport: basicHtmlTagsSupportConfig,
   }
 };
 
