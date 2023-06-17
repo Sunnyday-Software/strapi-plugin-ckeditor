@@ -104,6 +104,62 @@ const basicHtmlTagsSupportConfig = {
       }
     },
     {
+      name: 'table',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'thead',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'tbody',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'tfoot',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'th',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'tr',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
+      name: 'td',
+      attributes: {
+        sizes: true,
+        loading: true,
+        class: true
+      }
+    },
+    {
       name: 'img',
       attributes: {
         sizes: true,

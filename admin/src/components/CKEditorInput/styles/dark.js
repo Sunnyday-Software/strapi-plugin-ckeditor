@@ -14,7 +14,14 @@ export const style = css`
     --ck-color-button-on-background: rgb(33, 33, 52);
     --ck-color-button-on-hover-background: rgb(33, 33, 52);
     --ck-color-button-default-active-background: rgb(33, 33, 52);
+
+    .ck-editor__main {
+      textarea{
+        background: var(--ck-color-base-background);
+      }
+    }
   }
+
   .ck-word-count {
     color: rgb(165, 165, 186)
   }

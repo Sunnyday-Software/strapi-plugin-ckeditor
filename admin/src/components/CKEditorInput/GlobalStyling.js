@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import { style as common } from "./styles/common";
+import { style as tailwindstyle } from "./styles/tailwindstyle";
 import { style as light } from "./styles/light";
 import { style as dark } from "./styles/dark";
 
@@ -15,7 +15,7 @@ export const getGlobalStyling = ( theme ) => {
   }
 
   return createGlobalStyle`
-    ${ common }
+    ${ tailwindstyle }
     ${ themeStyle }
   `;
 };
