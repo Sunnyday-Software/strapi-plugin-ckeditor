@@ -1,7 +1,7 @@
 {
   "name": "@sunnydaysoftware/strapi-plugin-ckeditor",
   "version": "0.0.10",
-  "description": "CKEditor 5 custom field for Strapi.",
+  "description": "CKEditor 5 custom field for Strapi with tailwindcss support classes.",
   "strapi": {
     "name": "ckeditor",
     "description": "The rich text editor for every use case",
