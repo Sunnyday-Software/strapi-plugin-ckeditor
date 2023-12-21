@@ -1,102 +1,89 @@
-# CKEditor 5 custom field for Strapi
+# Custom CKEditor 5 Field for Strapi (TypeScript and TailwindCSS)
 
-<img src="https://user-images.githubusercontent.com/156149/192792402-4bb1e040-6f8c-49be-af90-fd35fd3a4c66.png" alt="CKEditor 5 used inside Strapi. Article form consisting of a title, excerpt text, and content">
+## Overview
 
-This package provides a custom field for Strapi that lets you use and configure CKEditor in no time.
+This is a custom implementation of the CKEditor 5 field for Strapi, tailored for use with TypeScript and optionally with TailwindCSS. This plugin is developed for Strapi versions 4.4 and above, allowing for the integration of CKEditor with additional TypeScript support.
 
-Custom fields are supported since Strapi 4.4+ and offer powerful API to create highly customizable fields.
+This plugin is a community modification based on the official CKEditor team's work.
 
-This is an official plugin, provided to you by the [CKEditor team](https://ckeditor.com) 👋
+## Important Note
 
-## <a id="features"></a>✨ Features
+For managing dependencies in Strapi projects, we strongly recommend using `yarn` instead of `npm` to avoid common issues such as compiling or build errors.
 
-* **No code field customization:** customize each field for its specific usage scenario – let it be short note, blog article, or a document.
-* **Predefined editor presets:** a couple predefined editor presets (sets of CKEditor 5 plugins and their configuration) to choose from.
-* **Custom max length validation:** Twitter-like length validation with visual indicators, based on the number of characters in the text, not the HTML string.
-* **Dark mode support:** because you like it.
-* **Media library integration:** inserting images directly from Strapi's media library.
-* **More features coming soon:** upload adapter integration, more granular editor toolbar and plugins configuration, and more.
+## Installation
 
-## <a id="installation"></a>🔧 Installation
+The plugin should be treated as an extension of Strapi, not as a dependency of the package. 
+It is hosted on GitHub at `github.com/Sunnyday-Software/strapi/plugin/ckeditor`.
 
-Inside your Strapi app, add the package:
+To integrate the plugin into your Strapi project, follow these steps:
 
-With `npm`:
+Clone the plugin repository into your Strapi project:
 
 ```bash
-npm install @ckeditor/strapi-plugin-ckeditor
+git clone https://github.com/Sunnyday-Software/strapi/plugin/ckeditor path/to/your/strapi/project/plugins/ckeditor
 ```
 
-With `yarn`:
+Navigate to your Strapi project directory and install the plugin dependencies:
 
 ```bash
-yarn add @ckeditor/strapi-plugin-ckeditor
-```
+cd path/to/your/strapi/project
 
-Then run build:
-
-```bash
-npm run build
-```
-
-or:
-
-```bash
-yarn build
-```
-
-## <a id="contributing"></a>🛠 Contributing
-
-This section covers the way how to configure your environment if you want to contribute to this package.
-
-### Setting up the environment
-
-In order to start making changes in the plugin you first need to install Strapi infrastructure on top of the plugin repository.
-
-```
-npx create-strapi-app --quickstart strapi
-cd strapi
-```
-
-By default Strapi does not create plugins folder so we need to create it.
-
-```
-mkdir -p src/plugins
-```
-
-Now we should clone this repository so we can work on it.
-
-```
-git clone git@github.com:ckeditor/strapi-plugin-ckeditor.git src/plugins/strapi-plugin-ckeditor
-```
-
-Let's add an entry inside `./package.json` file so, we won't need to use `yarn` inside plugin itself.
-
-```
-"workspaces": ["./src/plugins/strapi-plugin-ckeditor"]
-```
-
-Install dependencies:
-
-```
 yarn install
 ```
 
-Now we need to register plugin so strapi can use it. In order to do that we need
-to create (if not already created) `./config/plugins.js` file and add entry to it.
+Run the build process for your Strapi project to incorporate the plugin:
 
+```bash
+yarn build
 ```
-module.exports = ({ env }) => ({
-  ckeditor: {
-    enabled: true,
-    resolve: "./src/plugins/strapi-plugin-ckeditor"
-  },
+
+## TypeScript Configuration
+Update the `./config/plugins.ts` file in your Strapi project to include the CKEditor plugin:
+
+```typescript
+// ./config/plugins.ts
+import path from "path";
+
+export default ({ env }) => ({
+ckeditor: {
+enabled: true,
+resolve: "./src/plugins/strapi-plugin-ckeditor"
+},
+// Additional plugin configurations...
 });
 ```
 
-Rebuild the project and start the server:
+For production environments, make corresponding changes in `./config/env/production/plugin.ts` using the path module.
+
+
+```typescript
+// ./config/env/production/plugins.ts
+const path = require("path");
+
+export default ({env}) => ({
+
+  ckeditor: {
+    enabled: true,
+    resolve: path.join(__dirname, '..', '..', '..', '..', 'src', 'plugins', 'strapi-plugin-ckeditor')
+  }
+
+  // ... The rest of your configuration
+
+});
 
 ```
-yarn build
-yarn develop
-```
+
+## Branch Selection for styling
+
+**Main Branch**: For default CKEditor styling.
+**TailwindCSS Branch**: For TailwindCSS styling. Switch to the tailwind-impl branch.
+
+
+## Updating from Upstream
+When updating from the upstream repository, add the following dependencies to your package:
+
+- `@ckeditor/ckeditor5-core`
+- `@ckeditor/ckeditor5-html-support`
+- `@ckeditor/ckeditor5-source-editing`
+
+These dependencies should be included in your project's `package.json`.
