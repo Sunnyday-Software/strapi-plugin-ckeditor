@@ -13,14 +13,14 @@ For managing dependencies in Strapi projects, we strongly recommend using `yarn`
 ## Installation
 
 The plugin should be treated as an extension of Strapi, not as a dependency of the package. 
-It is hosted on GitHub at `github.com/Sunnyday-Software/strapi/plugin/ckeditor`.
+It is hosted on GitHub at `https://github.com/Sunnyday-Software/strapi-plugin-ckeditor`.
 
 To integrate the plugin into your Strapi project, follow these steps:
 
 Clone the plugin repository into your Strapi project:
 
 ```bash
-git clone https://github.com/Sunnyday-Software/strapi/plugin/ckeditor path/to/your/strapi/project/plugins/ckeditor
+git clone https://github.com/Sunnyday-Software/strapi-plugin-ckeditor ./src/plugins-strapi-plugin-ckeditor
 ```
 
 Navigate to your Strapi project directory and install the plugin dependencies:
@@ -75,8 +75,18 @@ export default ({env}) => ({
 
 ## Branch Selection for styling
 
-**Main Branch**: For default CKEditor styling.
-**TailwindCSS Branch**: For TailwindCSS styling. Switch to the tailwind-impl branch.
+Select one of the following branches based on your styling preference:
+
+- **Master Branch**: Use this branch if you prefer the default CKEditor styling.
+- *: Switch to this branch (tailwind-impl) for TailwindCSS styling.
+
+To switch between these styles, use the following command in your terminal:
+
+```bash
+git switch <branch-name>
+```
+
+Replace <branch-name> with either master for the default styling or tailwind-impl for the TailwindCSS styling.
 
 
 ## Updating from Upstream
